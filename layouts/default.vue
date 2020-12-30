@@ -1,13 +1,13 @@
 <template>
+
   <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
-      app
-    >
-      <v-list>
+      app>
+    <v-list>
         
         <v-list-item
           v-for="(item, i) in items"
@@ -17,13 +17,14 @@
           exact
         >
           <v-list-item-action>
-
-            <v-icon>{{ item.icon }}</v-icon>
-
+              <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
+
+
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
+
 
         </v-list-item>
       </v-list>
@@ -31,6 +32,7 @@
     <v-app-bar
       :clipped-left="clipped"
       fixed
+      color="white"
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
@@ -68,15 +70,11 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
-
-     <Footer/>
-     
   </v-app>
 </template>
 
 <script>
-import Footer from '@/components/Footer'
+
 export default {
   
   data () {
@@ -92,7 +90,7 @@ export default {
       ],
       items: [
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-lock',
           title: 'Welcome',
           to: '/'
         },

@@ -5,7 +5,9 @@
                 <v-col cols="12" sm="12" md="12">
                      <v-card
                         class="mx-auto"
-                        outlined >
+                        outlined 
+                        :to="{ name: 'product-details'}"
+                        >
                         <v-list-item three-line>
 
                             <v-list-item-avatar tile

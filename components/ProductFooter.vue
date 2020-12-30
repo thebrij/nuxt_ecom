@@ -1,29 +1,20 @@
 <template>
   <v-bottom-navigation
     :value="value"
-    color="primary"
     v-bind="localAttrs"
+    horizontal
+    no-gutters 
     
   >
-    <v-btn>
-      <span>Wish list</span>
-
-      <v-icon>mdi-heart</v-icon>
+    <v-btn style="width:50%" >
+      <span>ADD TO CART</span>
     </v-btn>
 
-    <v-btn :to="{ name: 'index'}">
-      <span>Home</span>
-      <v-icon>mdi-home</v-icon>
+    <v-btn style="width:50%"
+      color="primary" >
+     <span color="white"> BUY NOW</span>
     </v-btn>
 
-    <v-btn>
-      <span>Account</span>
-      <v-icon>mdi-account-circle</v-icon>
-    </v-btn>
-    <v-btn>
-      <span>Cart</span>
-      <v-icon>mdi-cart</v-icon>
-    </v-btn>
 
   </v-bottom-navigation>
 </template>
