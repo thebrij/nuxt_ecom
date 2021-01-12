@@ -29,25 +29,29 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      color="white"
-      app
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+
+    <v-app-bar :clipped-left="clipped" fixed color="white" app>
+
+      
+        <v-app-bar-nav-icon  @click.stop="drawer = !drawer" />
+
+     
+
+     
+        <!-- <v-icon @click="back"> mdi-keyboard-backspace</v-icon> -->
      
      
     
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+        <v-btn
+          icon
+          @click.stop="rightDrawer = !rightDrawer"
+        >
+          <v-icon>mdi-menu</v-icon>
+        </v-btn>
     </v-app-bar>
+
     <v-main>
       <div>
         <nuxt />
@@ -66,7 +70,7 @@
               mdi-repeat
             </v-icon>
           </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
+          <v-list-item-title>Switch {{route}}(click me)</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -82,6 +86,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: true, 
+      route: 'w',
       links: [
         'Courses',
         'Home',
@@ -104,9 +109,10 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Shop'
     }
-  }
+  },
+
 }
 </script>
 

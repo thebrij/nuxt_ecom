@@ -67,15 +67,14 @@
                          <p class="font-weight-bold">
                                 Heading
                             </p>
-                         <p class="text-justify">
+                         <p>
                              
                             Morbi mattis ullamcorper velit. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla.
                         </p>
                          <p class="font-weight-bold">
                                 Heading
                             </p>
-                         <p class="text-justify">
-                             
+                         <p>
                             Morbi mattis ullamcorper velit. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla.
                         </p>
 
@@ -115,22 +114,7 @@
                     </p>
                 </v-col>
             </v-row>
-            <v-row class="mb-5">
-                <v-btn
-                text
-                :ripple="false"
-                class="back-wrapper"
-                @click="to">
-                <icon
-                    name="angle-left"
-                    fill="#9e9e9e"
-                    height="20px"
-                    width="20px"
-                    class="d-flex" />
-                <p class="display-1 grey--text">
-                    Back
-                </p>
-                </v-btn>
+            <v-row>
                 <v-col cols="12" sm="12" md="12" class="text-left">
                     <v-badge
                         bordered
@@ -139,6 +123,7 @@
                         overlap
                     >
                         <v-btn
+                        small
                         class="white--text"
                         color="success"
                         depressed
@@ -146,9 +131,44 @@
                         4.5
                         </v-btn>
                     </v-badge>
+                    <span class="ml-2 title font-weight-bold">Brijpal</span>
+
+                    <p>
+                        Morbi mattis ullamcorper velit. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla.
+                    </p>
+                </v-col>
+                <v-col cols="12" sm="12" md="12" class="text-left">
+                    <v-badge
+                        bordered
+                        color="amber"
+                        icon="mdi-star"
+                        overlap
+                    >
+                        <v-btn
+                        small
+                        class="white--text"
+                        color="success"
+                        depressed
+                        >
+                        4.2
+                        </v-btn>
+                    </v-badge>
+                    <span class="ml-2 title font-weight-bold">Raju</span>
+
+                    <p>
+                        Morbi mattis ullamcorper velit. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla.
+                    </p>
                 </v-col>
             </v-row>
         </v-container>
+        <hr>
+            <v-row class="mb-5">
+                <v-col cols="12" sm="12" md="12" class="text-left">
+                    <span class="title font-weight-bold">Similar Prducts</span>
+                        <Product/>
+                    
+                </v-col>
+            </v-row>
         <div >
              <ProductFooter/>
 
@@ -157,10 +177,12 @@
     </div>
 </template>
 <script>
+import Product from '@/components/Product';
 import ProductFooter from '@/components/ProductFooter';
   export default {
     data () {
       return {
+        route: '',
         images: [
           'https://picsum.photos/id/11/500/300',
           'https://picsum.photos/id/12/500/300',
@@ -171,10 +193,14 @@ import ProductFooter from '@/components/ProductFooter';
         cycle: true,
       }
     },
+    mounted () {
+    window.scrollTo(0, 0);
+    this.route = this.$route.name;
+     },
     methods: {
       to() {
         this.$router.go(-1);
-        console.log(this.$router.name);
+        console.log(this.$route.name);
       },
     }
   }
